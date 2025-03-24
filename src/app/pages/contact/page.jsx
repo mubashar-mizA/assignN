@@ -8,7 +8,7 @@ const Contact = () => {
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
                     <p className="text-lg text-gray-700 mb-6">
-                        Have any questions? Reach out to us and we'll be happy to assist you.
+                        Have any questions? Reach out to us and we&apos;ll be happy to assist you.
                     </p>
                 </div>
                 <form className="max-w-4xl mx-auto bg-white  rounded-md p-7">
