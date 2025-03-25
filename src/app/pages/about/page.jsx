@@ -5,7 +5,7 @@ import Footer from '@/app/components/Footer';
 const About = () => {
     return (
         <div className="min-h-screen bg-gray-100 text-gray-900">
-            <Header />
+            {/* <Header /> */}
             <section className="max-w-4xl mx-auto text-center py-32 px-6">
                 <h1 className="text-4xl font-bold mb-4">About SharpEdg</h1>
                 <p className="text-lg text-gray-700">
@@ -13,7 +13,7 @@ const About = () => {
                     and an interactive learning experience.
                 </p>
             </section>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

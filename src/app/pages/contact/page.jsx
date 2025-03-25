@@ -3,7 +3,7 @@ import Footer from "@/app/components/Footer";
 const Contact = () => {
     return (
         <div className="min-h-screen bg-gray-100 text-gray-900 ">
-            <Header />
+            {/* <Header /> */}
             <section className=" py-2 px-6 max-w-4xl mx-auto pt-5 pb-24">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
@@ -29,7 +29,7 @@ const Contact = () => {
                     </button>
                 </form>
             </section>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

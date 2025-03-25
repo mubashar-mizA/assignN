@@ -5,7 +5,7 @@ export default function LandingPage() {
     return (
 
         <div>
-            <Header />
+            {/* <Header /> */}
             <div className="min-h-screen bg-gray-100 text-gray-900">
 
 
@@ -54,7 +54,7 @@ export default function LandingPage() {
 
 
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }
