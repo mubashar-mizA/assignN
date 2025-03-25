@@ -1,8 +1,11 @@
+import AdminDashboard from "@/components/AdminDashboard";
+import AdminDashboardNavigation from "@/components/AdminDashboardNavigation";
 const AdminDashboardPage = () => {
     return (
         <div>
-            <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-            <p className="mt-2 text-gray-600">Welcome to the admin panel.</p>
+            <AdminDashboardNavigation />
+            <AdminDashboard />
+
         </div>
     );
 };
