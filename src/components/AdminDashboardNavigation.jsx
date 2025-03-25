@@ -3,27 +3,27 @@ import Link from 'next/link'
 
 const AdminDashboardNavigation = () => {
     return (
-        <div className='w-max p-2'>
+        <div className='w-max p-2 border-red-600 flex flex-col'>
             <Link
-                href={'/admin-dashboard'}
+                href={'/pages/admin-dashboard'}
             >Dashboard</Link>
             <Link
-                href={'/new-product'}
+                href={'/pages/admin-dashboard/newproduct'}
             >New Product</Link>
             <Link
-                href={'/products'}
+                href={'/pages/admin-dashboard/products'}
             >Products</Link>
             <Link
-                href={'/contact'}
+                href={'/pages/admin-dashboard/contact'}
             >Contact</Link>
             <Link
-                href={'/orders'}
+                href={'/pages/admin-dashboard/orders'}
             >Orders</Link>
             <Link
-                href={'/newsletter'}
+                href={'/pages/admin-dashboard/newsletter'}
             >NewsLetter</Link>
             <Link
-                href={'/customizer'}
+                href={'/pages/admin-dashboard/customizer'}
             >Customizer</Link>
             <button>Logout</button>
         </div>
