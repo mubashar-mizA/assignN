@@ -7,7 +7,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-blue-600 text-white p-4 px-6 sm:px-16 flex justify-between items-center">
+    <header className="bg-blue-600 text-white px-2 pr-6 py-4 flex justify-between items-center">
       <Link href='/' className="text-2xl font-semibold">
         SharpEdg.com
       </Link>
@@ -34,6 +34,13 @@ const Header = () => {
             className="hover:underline">
             Contact</Link>
           </li>
+
+          <li><Link
+            href="/pages/admin-dashboard"
+            className="hover:underline">
+            Admin</Link>
+          </li>
+
         </ul>
       </nav>
 
