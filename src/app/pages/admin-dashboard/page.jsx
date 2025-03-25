@@ -1,8 +1,18 @@
-import React from 'react'
+import AdminDashboardNavigation from "@/components/AdminDashboardNavigation"
+
 
 const AdminDashboard = () => {
+
     return (
-        <div>AdminDashboard</div>
+
+        <div>
+            <div>
+                <AdminDashboard />
+            </div>
+            <div>
+                
+            </div>
+        </div>
     )
 }
 
