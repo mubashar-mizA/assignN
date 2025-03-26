@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
     try {
-        const data = await req.json(); // "response" ki jagah direct "data"
+        const data = await req.json(); 
 
         return NextResponse.json({
             ...data,
