@@ -13,14 +13,19 @@ const Signup = () => {
 
         try {
             const url = '/api/auth'
-            const userData = await fetch(url, {
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ name, email, password })
             })
-            console.log('User data', userData)
+
+            
+            const result = await response.json()
+
+            console.log('Backend response', result)
+
         } catch (error) {
 
         }

@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
     try {
-        const data = await req.json(); 
+        const data = await req.json();
 
+        console.log('Front end data', data)
         return NextResponse.json({
             ...data,
             message: "User registered successfully",
