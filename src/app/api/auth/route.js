@@ -8,7 +8,8 @@ export async function POST(req) {
         return NextResponse.json({
             ...data,
             message: "User registered successfully",
-            status: 201
+            status: 201,
+            success: true
         });
 
     } catch (error) {
