@@ -25,7 +25,12 @@ const Signup = () => {
             
             const result = await response.json()
 
+
             console.log('Backend response', result)
+            if(result.success){
+                
+            }
+
 
         } catch (error) {
 
