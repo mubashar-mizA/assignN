@@ -1,11 +1,29 @@
 "use client"
 
+import { parseSetCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { useState } from "react";
 
 const Contact = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
+    const handleContactForm = async () => {
+        try {
+            console.log(name, email, message)
+            const url = '/api/contact'
+            const responseFromBackend = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(name, email, message)
+            })
+            const result = await responseFromBackend.json()
+            console.log('Result from backend', result)
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <div className="min-h-screen bg-gray-100 text-gray-900 ">
 
@@ -19,36 +37,47 @@ const Contact = () => {
                 </div>
 
                 <div className="max-w-4xl mx-auto bg-white  rounded-md p-7">
-                    <div>
-                        <input
-                            type="text"
-                            className="w-full p-2 border rounded outline-none"
-                            placeholder="Enter your name"
-                        />
-                    </div>
-                    <div>
-                        <input
-                            type="email"
-                            className="w-full p-2 border rounded outline-none"
-                            placeholder="Enter your email"
-                        />
-                    </div>
-                    <div>
-                        <textarea
-                            className="w-full p-2 border rounded outline-none"
-                            rows="6"
-                            placeholder="Your message"
-                        ></textarea>
-                    </div>
+
+                    <input
+                        type="text"
+                        className="w-full p-2 border rounded outline-none"
+                        placeholder="Enter your name"
+                        value={name}
+                        onChange={(e) => {
+                            setName(e.target.value)
+                        }}
+                    />
+                    <input
+                        type="email"
+                        className="w-full p-2 border rounded outline-none"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => {
+                            setEmail(e.target.value)
+                        }}
+                    />
+
+
+                    <textarea
+                        className="w-full p-2 border rounded outline-none"
+                        rows="6"
+                        placeholder="Your message"
+                        value={message}
+                        onChange={(e) => {
+                            setMessage(e.target.value)
+                        }}
+                    ></textarea>
+
                     <button
                         className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+                        onClick={handleContactForm}
                     >
                         Send Message
                     </button>
                 </div>
-            </section>
+            </section >
 
-        </div>
+        </div >
     );
 };
 
