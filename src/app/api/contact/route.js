@@ -1,9 +1,30 @@
+import ConnectDB from "@/configs/connectDB";
+import contactModel from "@/models/contact"
 import { NextResponse } from "next/server"
 
 export async function POST(req) {
     try {
 
         const { name, email, message } = await req.json()
+
+        // console.log('Request body', req.body);
+
+        ConnectDB()
+
+        const existedUser = contactModel.findOne({ email })
+
+        if (existedUser) {
+            return NextResponse.json({
+                success: false,
+                status: 403,
+                message: 'User already exists!'
+            })
+        }
+        const newQuery = await contactModel({ name, email, message })
+
+        const savedQuery = await newQuery.save()
+
+        console.log('Saved query in db =====>', savedQuery)
 
         return NextResponse.json({
             success: true,

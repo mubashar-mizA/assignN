@@ -4,15 +4,20 @@ import React, { useState } from "react";
 
 const Signup = () => {
 
-    const [name, setName] = useState()
+    const [name, setName] = useState('')
 
-    const [email, setEmail] = useState()
+    const [email, setEmail] = useState('')
 
-    const [password, setPassword] = useState()
+    const [password, setPassword] = useState('')
 
     const handleSubmit = async () => {
 
         try {
+            if (!name || !email || !password) {
+                console.log("Please fill all fields!");
+                return;
+            }
+
             const url = '/api/auth'
             const response = await fetch(url, {
                 method: 'POST',
@@ -22,14 +27,18 @@ const Signup = () => {
                 body: JSON.stringify({ name, email, password })
             })
 
-            
+
             const result = await response.json()
 
 
-            console.log('Backend response', result)
-            if(result.success){
-                
+            console.log("Backend response:", result);
+
+            if (result.status === 201) {
+                console.log("User registered successfully!");
+            } else {
+                console.log("Error:", result.message);
             }
+
 
 
         } catch (error) {

@@ -1,12 +1,19 @@
 import { NextResponse } from "next/server";
 
+import userModel from "@/models/user";
+import ConnectDB from "@/configs/connectDB";
+
 export async function POST(req) {
     try {
-        const data = await req.json();
+        const { name, email, password } = await req.json();
 
-        console.log('Front end data', data)
+        // console.log('Front end data', data)
+        ConnectDB()
+        const newUser = await userModel({name, email, password})
+
+        await newUser.save()
+
         return NextResponse.json({
-            ...data,
             message: "User registered successfully",
             status: 201,
             success: true
@@ -14,7 +21,7 @@ export async function POST(req) {
 
     } catch (error) {
         return NextResponse.json({
-            message: "Error",
+            message: `Error =====> ${error}`,
             status: 500
         });
     }

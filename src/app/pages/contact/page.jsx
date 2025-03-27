@@ -7,8 +7,10 @@ const Contact = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
+
     const handleContactForm = async () => {
         try {
+            console.log('button clicked')
             console.log(name, email, message)
             const url = '/api/contact'
             const responseFromBackend = await fetch(url, {
@@ -16,14 +18,17 @@ const Contact = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(name, email, message)
+                body: JSON.stringify({name, email, message})
             })
+
             const result = await responseFromBackend.json()
+
             console.log('Result from backend', result)
         } catch (error) {
             console.log(error)
         }
     }
+
     return (
         <div className="min-h-screen bg-gray-100 text-gray-900 ">
 
