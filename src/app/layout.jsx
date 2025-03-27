@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`antialiased max-w-6xl mx-auto`}
+        className={`antialiased `}
       >
         <Header />
         {children}
