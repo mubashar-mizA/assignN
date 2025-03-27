@@ -11,15 +11,7 @@ export async function POST(req) {
 
         ConnectDB()
 
-        const existedUser = contactModel.findOne({ email })
-
-        if (existedUser) {
-            return NextResponse.json({
-                success: false,
-                status: 403,
-                message: 'User already exists!'
-            })
-        }
+        
         const newQuery = await contactModel({ name, email, message })
 
         const savedQuery = await newQuery.save()

@@ -9,7 +9,17 @@ export async function POST(req) {
 
         // console.log('Front end data', data)
         ConnectDB()
-        const newUser = await userModel({name, email, password})
+
+        const existedUser = await userModel.findOne({ email })
+        if (existedUser) {
+            return NextResponse.json({
+                message: "User already exists!",
+                status: 409,
+                success: true
+            });
+        }
+
+        const newUser = await userModel({ name, email, password })
 
         await newUser.save()
 
