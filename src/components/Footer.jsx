@@ -4,11 +4,12 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-700 text-gray-300 py-10 px-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left ">
+    <footer className="bg-blue-700 text-gray-300 py-10 sm:px-6">
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:text-center md:text-left px-7">
         
         {/* Brand Section */}
-        <div className="flex flex-col items-center md:items-start ">
+        <div className="flex flex-col  items-start gap-1 sm:gap-0">
           <Link href="/" className="text-2xl font-bold text-white font-mono">
             SharpEdg.com
           </Link>

@@ -7,8 +7,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-blue-600 text-white px-2 pr-6 py-4 flex justify-between items-center">
-      <Link href='/' className="text-2xl font-semibold">
+    <header className="bg-blue-600 text-white  pr-6 py-4 flex justify-between items-center px-5">
+      <Link href='/' className="text-2xl font-mono">
         SharpEdg.com
       </Link>
 
