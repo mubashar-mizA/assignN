@@ -1,47 +1,56 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+
 const Footer = () => {
   return (
-    <footer className="bg-blue-600 text-white py-10 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-        {/* SharpEdg Section */}
-        <div className='flex items-center justify-center border-r'>
-          <div className='flex flex-col items-center gap-1' >
-            <Link
-              href='/'
-              className="text-xl font-bold "
-            >
-              SharpEdg.com
-            </Link>
-            <p className="text-xs">Empowering your learning journey.</p>
+    <footer className="bg-blue-700 text-gray-300 py-10 px-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left ">
+        
+        {/* Brand Section */}
+        <div className="flex flex-col items-center md:items-start ">
+          <Link href="/" className="text-2xl font-bold text-white font-mono">
+            SharpEdg.com
+          </Link>
+          <p className="mt-2" style={{ letterSpacing: '0.1em' }} >Empowering your learning journey.</p>
+          {/* Social Media Links */}
+          <div className="flex  gap-4 mt-4 text-white">
+            <a href="#" className="hover:text-gray-400"><FaFacebook size={20} /></a>
+            <a href="#" className="hover:text-gray-400"><FaTwitter size={20} /></a>
+            <a href="#" className="hover:text-gray-400"><FaLinkedin size={20} /></a>
+            <a href="#" className="hover:text-gray-400"><FaInstagram size={20} /></a>
           </div>
         </div>
 
-        {/* Important Links Section */}
-        <div className=' border-r'>
-          <h2 className="text-lg font-semibold mb-2">Important Links</h2>
+        {/* Important Links */}
+        <div>
+          <h2 className="text-xl font-semibold text-white mb-3">Links</h2>
           <ul className="space-y-2">
-            <li><a href="#" className=" hover:underline">Home</a></li>
-            <li><a href="#" className=" hover:underline">About</a></li>
-            <li><a href="#" className=" hover:underline">Services</a></li>
-            <li><a href="#" className=" hover:underline">Contact</a></li>
+            <li><Link href="/" className="hover:text-white " style={{ letterSpacing: '0.3em' }} >Home</Link></li>
+            <li><Link href="/pages/about" className="hover:text-white " style={{ letterSpacing: '0.3em' }} >About</Link></li>
+            <li><Link href="/pages/contact" className="hover:text-white " style={{ letterSpacing: '0.3em' }} >Contact</Link></li>
+            <li><Link href="/pages/services" className="hover:text-white " style={{ letterSpacing: '0.3em' }} >Services</Link></li>
           </ul>
         </div>
 
-        {/* Services Section */}
+        {/* Services */}
         <div>
-          <h2 className="text-lg font-semibold mb-2">Our Services</h2>
+          <h2 className="text-xl font-semibold text-white mb-3">Services</h2>
           <ul className="space-y-2">
-            <li className="">Online Courses</li>
-            <li className="">Live Webinars</li>
-            <li className="">Career Counseling</li>
-            <li className="">Certifications</li>
+            <li style={{ letterSpacing: '0.1em' }} >Certifications</li>
+            <li style={{ letterSpacing: '0.1em' }} >Live Webinars</li>
+            <li style={{ letterSpacing: '0.1em' }} >Online Courses</li>
+            <li style={{ letterSpacing: '0.1em' }} >Career Counseling</li>
           </ul>
         </div>
       </div>
-      <p className="text-center text-sm mt-16">&copy; {new Date().getFullYear()} SharpEdg.com All rights reserved.</p>
+
+      {/* Footer Bottom */}
+      <div className="border-t border-gray-200 mt-8 pt-4 text-center text-sm" style={{ letterSpacing: '0.4em' }}  >
+        &copy; {new Date().getFullYear()} SharpEdg.com All rights reserved.
+      </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
